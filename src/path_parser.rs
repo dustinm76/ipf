@@ -11,7 +11,7 @@ pub fn parse(args: env::Args, mut stdin: io::StdinLock) -> Vec<String> {
 
     if paths.is_empty() {
         let mut bytes: Vec<u8> = Vec::new();
-        stdin.read_to_end(&mut bytes);
+        let _ = stdin.read_to_end(&mut bytes);
 
         let input = String::from_utf8(bytes).unwrap();
         let lines = input.split("\n"); //TODO if null-input, split on \0
