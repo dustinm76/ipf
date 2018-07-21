@@ -2,7 +2,7 @@ use std::env;
 use std::io;
 use std::io::Read;
 
-pub fn parse(args: env::Args, mut stdin: io::StdinLock) -> Vec<String> {
+pub fn read(args: env::Args, mut stdin: io::StdinLock) -> Vec<String> {
     let mut paths: Vec<String> = Vec::new();
 
     for argument in args {
