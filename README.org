@@ -1,3 +1,33 @@
-* Test
-*bold*
-asdf
+#+TITLE: gitIgnored Paths Filter
+#+AUTHOR: Dustin Mackenzie
+
+* Name
+  ipf - gitIgnored Paths Filter
+
+* Synopsis
+  ipf [options] [paths]
+
+* Description
+  Outputs paths that are trackable by the current git repository. Reads from
+  stdin if no paths are given.
+
+* Options
+** --null-input
+   Input paths are terminated by a null character instead of by whitespace, and
+   the quotes and backslash are not special (every character is taken
+   literally). Disables the end of file string, which is treated like any other
+   argument. Useful when paths might contain white space, quote marks, or
+   backslashes. The GNU find -print0 option produces input suitable for this
+   mode.
+
+** --null-output
+   Output paths are terminated by a null character instead of by whitespace.
+
+* Examples
+  *find . | ipf*
+
+  This will print every trackable file in the directory.
+
+* Author
+  Written and maintained by Dustin Mackenzie <dustin.mackenzie76@gmail.com>.
+
