@@ -1,5 +1,5 @@
-mod options;
 mod path_parser;
+mod path_printer;
 
 use std::env;
 use std::io;
@@ -10,9 +10,6 @@ fn main() {
     command_line_paths.next(); // Pop program name off
 
     let paths = path_parser::parse(command_line_paths, stdin.lock());
-
-    for path in paths {
-        println!("{}", path);
-    }
+    path_printer::print(paths);
 }
 
